@@ -14,3 +14,5 @@ Select-String {filePath} -pattern {pattern} | Select LineNumber
 ((Get-Content {filePath} | Out-String).Replace('
 ', '') | Set-Content {newFilePath}
 
+# file line numbers
+Get-Content {filePath} | Measure-Object –Line
